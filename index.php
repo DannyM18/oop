@@ -1,7 +1,7 @@
 <?php
 //gemaakt door: Pascal Petri
 //Datum: 22-09-2025
-
+hallloooo
 class Room {
     private string $name;
     private float $length;
