@@ -1,3 +1,14 @@
+Hoe je dit gebruikt op je VM
+Script uploaden/maken: Kopieer de code hierboven naar een bestand genaamd install_lamp.sh op je Debian machine.
+
+Uitvoerbaar maken: Geef het script de juiste rechten met:
+chmod +x install_lamp.sh
+
+Uitvoeren: Start de installatie:
+./install_lamp.sh
+
+
+
 Toegang via je Laptop (VirtualBox instellingen)
 Om de browser op je laptop te gebruiken om de server in de VM te benaderen, moet je de Netwerk instellingen van je VirtualBox machine aanpassen:
 

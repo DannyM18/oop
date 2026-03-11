@@ -1,0 +1,21 @@
+repository.
+
+1. Update packages
+apt update
+apt upgrade -y
+apt install -y lsb-release ca-certificates curl apt-transport-https
+2. Add the repository
+curl -sSLo /tmp/debsuryorg-archive-keyring.deb https://packages.sury.org/debsuryorg-archive-keyring.deb
+dpkg -i /tmp/debsuryorg-archive-keyring.deb
+sh -c 'echo "deb [signed-by=/usr/share/keyrings/debsuryorg-archive-keyring.gpg] https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list'
+3. Update packages and check the availability of php 8.5
+apt update
+apt-cache policy php8.5
+4. Install php 8.5 packages with fpm
+apt install -y php8.5-fpm php8.5-cli php8.5-{bcmath,bz2,curl,gd,gmp,intl,mbstring,mysql,readline,xml,zip}
+The opcache package is not installed separately, as it is already built in by default.
+
+5. Enable auto-start
+systemctl enable php8.5-fpm --now
+6. Check the service status
+systemctl status php8.5-fpm
